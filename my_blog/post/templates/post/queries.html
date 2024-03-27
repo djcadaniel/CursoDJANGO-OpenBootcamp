@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+</head>
+<body>
+  <h3>Buscando autores que contengan en su nombre la palabra yes</h3>
+  <ul>
+    {% for fil in filtereds3 %}
+      <li>{{ fil.name }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Buscando elementos cuyo id es menor o igual a 15</h3>
+  <ul>
+    {% for fil in filtereds2 %}
+      <li>{{ fil.email }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Elementos ordenados por email</h3>
+  <ul>
+    {% for order in orders %}
+      <li>{{ order.email }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Búsqueda ilimitada y con offset</h3>
+  <ul>
+    {% for offset in offsets %}
+      <li>{{ offset.email }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Obteniedndo los 10 primeros</h3>
+  <ul>
+    {% for limit in limits %}
+    <li>{{ limit.email }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Obteniedndo un único elemento</h3>
+  <p>{{ author }}</p>
+  <p>{{ author.email }}</p>
+  <h3>Buscando autor con email twilcox@example.net</h3>
+  <ul>
+  {% for item in filtered %}
+    <li>Es: {{item.name}} | {{item.email}}</li>
+    {% endfor %}
+  </ul>
+
+  <h1>Autores</h1>
+  <ul>
+    {% for author in authors %}
+    <li>{{ author.name }} ({{author.email}})</li>
+    {% endfor %}
+  </ul>
+  <h3>Total de autores: {{ authors|length }}</h3>
+</body>
+</html>
