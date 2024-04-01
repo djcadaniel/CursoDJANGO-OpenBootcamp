@@ -28,3 +28,10 @@ def queries(request):
   filtereds3 = Author.objects.filter(name__contains='yes')
     
   return render(request, 'post/queries.html', {'authors': authors, 'filtered': filtered, 'author': author, 'limits': limits, 'offsets': offsets, 'orders': orders, 'filtereds2': filtereds2, 'filtereds3': filtereds3 })
+
+def update(request):
+  author = Author.objects.get(id=1)
+  author.name = "djcadaniel"
+  author.email = 'djcadaniel@gmail.com'
+  author.save()
+  return HttpResponse("Modificado")
